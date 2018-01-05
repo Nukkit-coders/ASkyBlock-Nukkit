@@ -63,7 +63,7 @@ public class LeaveSubCommand extends SubCommand {
         for (WorldSettings levelSetting : getPlugin().level) {
             String level = levelSetting.getLevel().getName();
             if (!pt.getLevel().getName().equalsIgnoreCase(level)) {
-                sender.sendMessage(getPrefix() + getLocale(pt).errorWrongWorld);
+//                sender.sendMessage(getPrefix() + getLocale(pt).errorWrongWorld);
                 return true;
             }
         }
