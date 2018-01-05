@@ -80,7 +80,7 @@ public final class ASlocales {
     public String errorTooLong = "§cToo long. Maximum size is [length].";
     public String errorTooShort = "§cToo short. Minimum size is [length].";
     public String adminSetSpawnOverride = "§cThere a player owned this plot. Admin override this command";
-    public String errorTooSoon = "§cYou need to wait [secs] to [cmd] your island";
+    public String errorTooSoon = "§cYou need to wait [secs].";
     public String errorUseInGame = "§cThis command must be used in-game.";
     public String errorWrongWorld = "§cYou cannot do that in this world.";
     public String errorUnknownWorld = "§cUnknown world. Possible worlds are:";
