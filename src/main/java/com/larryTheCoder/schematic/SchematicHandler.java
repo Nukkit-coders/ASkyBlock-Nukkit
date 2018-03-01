@@ -671,27 +671,26 @@ public final class SchematicHandler {
             }
         }
         // Add some dirt and grass
-        for (int x = X - 1; x < X + 3; ++x) {
-            for (int z = X - 1; z < X + 3; ++z) {
+        for (int x = X - 1; x < X + 2; ++x) {
+            for (int z = X - 1; z < X + 2; ++z) {
                 world.setBlockIdAt(x, groundHeight + 1, z, Block.DIRT);
                 world.setBlockIdAt(x, groundHeight + 2, z, Block.DIRT);
             }
         }
-        for (int x = X - 2; x < X + 4; ++x) {
-            for (int z = Z - 2; z < Z + 4; ++z) {
+        for (int x = X - 2; x < X + 3; ++x) {
+            for (int z = Z - 2; z < Z + 3; ++z) {
                 world.setBlockIdAt(x, groundHeight + 3, z, Block.DIRT);
                 world.setBlockIdAt(x, groundHeight + 4, z, Block.DIRT);
             }
         }
-        for (int x = X - 3; x < X + 5; ++x) {
-            for (int z = Z - 3; z < Z + 5; ++z) {
+        for (int x = X - 3; x < X + 4; ++x) {
+            for (int z = Z - 3; z < Z + 4; ++z) {
                 world.setBlockIdAt(x, groundHeight + 5, z, Block.DIRT);
-                world.setBlockIdAt(x, groundHeight + 6, z, Block.DIRT);
-                world.setBlockIdAt(x, groundHeight + 7, z, Block.GRASS);
+                world.setBlockIdAt(x, groundHeight + 6, z, Block.GRASS);
             }
         }
         // Then cut off the corners to make it round-ish
-        for (int x_space = X - 2; x_space <= X + 2; x_space += 4) {
+        /*for (int x_space = X - 2; x_space <= X + 2; x_space += 4) {
             for (int z_space = Z - 2; z_space <= Z + 2; z_space += 4) {
                 world.setBlockIdAt(x_space, groundHeight + 3, z_space, Block.AIR);
                 world.setBlockIdAt(x_space, groundHeight + 4, z_space, Block.AIR);
@@ -711,10 +710,16 @@ public final class SchematicHandler {
         world.setBlockIdAt(Xt - 1, groundHeight + 1, Zt + 1, Block.AIR);
         world.setBlockIdAt(Xt - 2, groundHeight + 1, Zt + 2, Block.AIR);
         world.setBlockIdAt(Xt - 1, groundHeight + 1, Zt - 1, Block.AIR);
-        world.setBlockIdAt(Xt - 2, groundHeight + 1, Zt - 2, Block.AIR);
-        // tree
-        ObjectTree.growTree(world, X + 10, groundHeight + 8, Z + 11, new NukkitRandom(), BlockSapling.OAK);
-        this.initChest(world, X, groundHeight, Z, p);
+        world.setBlockIdAt(Xt - 2, groundHeight + 1, Zt - 2, Block.AIR);*/
+        // Sand
+        world.setBlockIdAt(X, groundHeight + 1, Z, Block.SAND);
+        world.setBlockIdAt(X, groundHeight + 2, Z, Block.SAND);
+        world.setBlockIdAt(X, groundHeight + 3, Z, Block.SAND);
+        world.setBlockIdAt(X, groundHeight + 4, Z, Block.SAND);
+        world.setBlockIdAt(X, groundHeight + 5, Z, Block.SAND);
+        // Tree and Chest
+        ObjectTree.growTree(world, X, groundHeight + 7, Z, new NukkitRandom(), BlockSapling.OAK);
+        this.initChest(world, X, groundHeight + 7, Z + 1, p);
     }
 
     private void initChest(Level lvl, int x, int y, int z, Player p) {
@@ -752,6 +757,7 @@ public final class SchematicHandler {
             items.put(8, Item.get(Item.SAPLING, 0, 1));
             items.put(9, Item.get(Item.STRING, 0, 12));
             items.put(10, Item.get(Item.POISONOUS_POTATO, 0, 32));
+            items.put(11, Item.get(Item.CACTUS, 0, 1));
             e.getInventory().setContents(items);
         }
 
