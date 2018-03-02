@@ -690,27 +690,24 @@ public final class SchematicHandler {
             }
         }
         // Then cut off the corners to make it round-ish
-        /*for (int x_space = X - 2; x_space <= X + 2; x_space += 4) {
-            for (int z_space = Z - 2; z_space <= Z + 2; z_space += 4) {
-                world.setBlockIdAt(x_space, groundHeight + 3, z_space, Block.AIR);
-                world.setBlockIdAt(x_space, groundHeight + 4, z_space, Block.AIR);
+        for (int x_space = X - 3; x_space <= X + 3; x_space += 6) {
+            for (int z_space = Z - 3; z_space <= Z + 3; z_space += 6) {
+                world.setBlockIdAt(x_space, groundHeight + 5, z_space, Block.AIR);
+                world.setBlockIdAt(x_space, groundHeight + 6, z_space, Block.AIR);
             }
         }
 
-        for (int y = groundHeight - 1; y < groundHeight + 8; ++y) {
-            for (int x_space = X - 3; x_space <= X + 3; x_space += 6) {
-                for (int z_space = -3; z_space <= Z + 3; z_space += 6) {
-                    world.setBlockIdAt(x_space, y, z_space, Block.AIR);
-                }
+        for (int x_space = X - 2; x_space <= X + 2; x_space += 4) {
+            for (int z_space = Z - 2; z_space <= Z + 2; z_space += 4) {
+                world.setBlockIdAt(x_space, groundHeight + 3, z_space, Block.AIR);
             }
         }
-        int Xt = X;
-        int Zt = Z;
-        // First place
-        world.setBlockIdAt(Xt - 1, groundHeight + 1, Zt + 1, Block.AIR);
-        world.setBlockIdAt(Xt - 2, groundHeight + 1, Zt + 2, Block.AIR);
-        world.setBlockIdAt(Xt - 1, groundHeight + 1, Zt - 1, Block.AIR);
-        world.setBlockIdAt(Xt - 2, groundHeight + 1, Zt - 2, Block.AIR);*/
+
+        for (int x_space = X - 1; x_space <= X + 1; x_space += 2) {
+            for (int z_space = Z - 1; z_space <= Z + 1; z_space += 2) {
+                world.setBlockIdAt(x_space, groundHeight + 1, z_space, Block.AIR);
+            }
+        }
         // Sand
         world.setBlockIdAt(X, groundHeight + 1, Z, Block.SAND);
         world.setBlockIdAt(X, groundHeight + 2, Z, Block.SAND);
