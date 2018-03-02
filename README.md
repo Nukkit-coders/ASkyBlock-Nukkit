@@ -1,6 +1,5 @@
 ## ASkyBlock ##
-[![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](http://www.paypal.me/DoubleCheese)
-[![Circle-CI](https://circleci.com/gh/TheSolidCrafter/ASkyBlock-Nukkit.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/TheSolidCrafter/ASkyBlock-Nukkit)
+[![Circle-CI](https://circleci.com/gh/TheSolidCrafter/ASkyBlock-Nukkit.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/Nukkit-coders/ASkyBlock-Nukkit)
 
 __Special SkyBlock minigame build specially for Nukkit.__
 
@@ -28,8 +27,6 @@ public boolean openAPI(){
 There a lot of command to list here but you can use `/is help` in console or in game! But make sure you install this plugin first!
 
 ## Features
-This plugin is best for `Single-world` production server.
-
 Current features are:
 
 * Schematic loader (Which paste and load schematic file)
@@ -49,7 +46,8 @@ This plugin also depends on these plugins:
 * EconomyAPI
 
 Please take attention, this plugin support Nukkit v1.0.8 (API 1.0.0) 
-Due to getSide(I) API changes. This plugin no longer support lower than v1.0.8
+Due to getSide(I) API changes. This plugin no longer support lower than v1.0.8.
+NukkitX is not supported yet.
 
 ### Releases
 Pre-releases are considered **unsafe** for production servers.
@@ -57,7 +55,7 @@ Pre-releases are considered **unsafe** for production servers.
 Releases have a clean version number, has been tested, and should be safe for production servers.
 
 ### Note for developers
-This is an actively developed project. Pull requests are accepted if they address a specific issue and are of high enough quality. The best way to do a pull request is to file an issue, then say that you'll fix it so we know it's coming and can coordinate with you.
+~~This is an actively developed project.~~ Pull requests are accepted if they address a specific issue and are of high enough quality. The best way to do a pull request is to file an issue, then say that you'll fix it so we know it's coming and can coordinate with you.
 
 ### Nukkit-Help Group Discord. [Helping, Performance, Informations]
 TheSolidCrafter Staff created this group for more activity on Nukkit/PMMP/Steadfast2 helping and developing plugins!
