@@ -1,18 +1,13 @@
 name: "ASkyBlock"
-version: "0.3.8-BETA"
+version: "0.3.9"
 author: Adam Matthew
 api: ["1.0.0"]
 main: com.larryTheCoder.ASkyBlock
 load: POSTWORLD
 website: http://github.com/Nukkit-coders/ASkyBlock-Nukkit
-author: "Adam Matthew"
+author: "Adam Matthew, Nukkit Coders"
 description: "Advanced minecraft PE SkyBlock plugin!"
-authors:
-  - PikyCZ
-  - Skull3x
-  - Adam1609
-  - Nukkit Coders
-depend: 
+depend:
   - DbLib
 softdepend:
   - EconomyAPI
@@ -37,7 +32,7 @@ permissions:
     # Kick player from owner's island
     is.command.expel:
      default: true
-     description: "Kick a player from your island"  
+     description: "Kick a player from your island"
     # Island leave permission
     is.command.leave:
      default: true
@@ -65,15 +60,15 @@ permissions:
     # Teleport or warp? Hmmm...
     is.command.teleport:
      default: true
-     description: "Teleport to other island!"   
+     description: "Teleport to other island!"
     # Has an invitation? Of course!
     is.command.accept:
      default: true
-     description: "accept an invitation"   
+     description: "accept an invitation"
     # Sorry I didn't like to join you
     is.command.reject:
      default: true
-     description: "Reject an invitation"  
+     description: "Reject an invitation"
     # Edit island. eg biome, name
     is.command.edit:
      default: true

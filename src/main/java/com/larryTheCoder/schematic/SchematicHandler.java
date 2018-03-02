@@ -441,7 +441,6 @@ public final class SchematicHandler {
             iter.remove();
         }
         Utils.send("&eSuccessfully loaded &e" + islandBlocks.size() + " &eSchematic");
-        this.sendTip();
     }
 
     /**
@@ -761,24 +760,6 @@ public final class SchematicHandler {
     }
 
     public void sendTip() {
-        Random rand = new Random();
-        switch (rand.nextInt(5)) {
-            case 1:
-                Utils.send("&eTIP: &eUse the Minecraft: PE Schematic. MCPC Schematic might result wrong blocks");
-                break;
-            case 2:
-                Utils.send("&eTIP: &eWhile you standing nearby island offset. Don't forget to sneak before getting there.");
-                break;
-            case 3:
-                Utils.send("&eTIP: &eDid you know that this schematic are provided by @tastybento original code?");
-                break;
-            case 4:
-                Utils.send("&eTIP: &eThis plugin can also demand on single world production server. Only use /isa setSpawn in world");
-                break;
-            default:
-                Utils.send("&eFrom author: This is not an abandoned project! This always be updated once a week");
-
-        }
     }
 
     public List<String> getSchemaList() {

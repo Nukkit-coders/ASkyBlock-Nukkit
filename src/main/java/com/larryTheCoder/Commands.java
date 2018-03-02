@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Adam Matthew 
+ * Copyright (C) 2017 Adam Matthew
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -151,6 +151,7 @@ public class Commands extends PluginCommand<ASkyBlock> {
                     sender.sendMessage("§a- PikyCZ          => §eMember");
                     sender.sendMessage("§a- Skull3x         => §eMember");
                     sender.sendMessage("§a- Adam1609        => §eMember");
+                    sender.sendMessage("§a- PetteriM1       => §eMember");
                     break;
                 default:
                     sender.sendMessage("§cUnknown command use /is help for a list of commands");
