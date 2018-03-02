@@ -1,12 +1,11 @@
 name: "ASkyBlock"
 version: "0.3.9"
-author: Adam Matthew
 api: ["1.0.0"]
 main: com.larryTheCoder.ASkyBlock
 load: POSTWORLD
 website: http://github.com/Nukkit-coders/ASkyBlock-Nukkit
 author: "Adam Matthew, Nukkit Coders"
-description: "Advanced minecraft PE SkyBlock plugin!"
+description: "Advanced Minecraft PE SkyBlock plugin for Nukkit servers"
 depend:
   - DbLib
 softdepend:
