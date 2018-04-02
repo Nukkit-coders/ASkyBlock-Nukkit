@@ -38,6 +38,9 @@ Current features are:
 * Database (Implementation of MySql and Sqlite)
 * More colorful (Nice and cozy)
 
+## Servers
+* play.nycuro.us
+
 ## Installation
 This plugin version support Nukkit Server v1.0.8.
 This plugin also depends on these plugins:
