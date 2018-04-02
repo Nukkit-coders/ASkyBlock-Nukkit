@@ -18,16 +18,14 @@
 package com.larryTheCoder.task;
 
 import cn.nukkit.Player;
-import cn.nukkit.Server;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.level.Level;
-import cn.nukkit.level.Location;
 import cn.nukkit.level.Position;
+import cn.nukkit.level.biome.EnumBiome;
 import cn.nukkit.level.format.generic.BaseFullChunk;
-import cn.nukkit.level.generator.biome.Biome;
+import cn.nukkit.level.biome.Biome;
 import cn.nukkit.scheduler.NukkitRunnable;
 import cn.nukkit.scheduler.Task;
-import cn.nukkit.utils.MainLogger;
 import com.larryTheCoder.ASkyBlock;
 import com.larryTheCoder.storage.IslandData;
 import com.larryTheCoder.utils.Settings;
@@ -93,7 +91,7 @@ public class UpdateBiomeTask extends Task {
                         for (int y = Settings.seaLevel; y < 255 - Settings.seaLevel; y++) {
                             for (int x = 0; x < 16; x++) {
                                 for (int z = 0; z < 16; z++) {
-                                    chunk.setBiomeId(x, z, Biome.getBiome(pd.getBiome()).getId());
+                                    chunk.setBiomeId(x, z, EnumBiome.getBiome(pd.getBiome()).getId());
                                 }
                             }
                         }

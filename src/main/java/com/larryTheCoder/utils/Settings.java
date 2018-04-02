@@ -17,7 +17,8 @@
 package com.larryTheCoder.utils;
 
 import cn.nukkit.item.Item;
-import cn.nukkit.level.generator.biome.Biome;
+import cn.nukkit.level.biome.Biome;
+import cn.nukkit.level.biome.EnumBiome;
 import com.larryTheCoder.storage.IslandData.SettingsFlag;
 
 import java.util.*;

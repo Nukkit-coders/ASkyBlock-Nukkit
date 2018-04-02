@@ -24,8 +24,9 @@ import cn.nukkit.blockentity.BlockEntityChest;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.Level;
 import cn.nukkit.level.Position;
+import cn.nukkit.level.biome.EnumBiome;
 import cn.nukkit.level.format.generic.BaseFullChunk;
-import cn.nukkit.level.generator.biome.Biome;
+import cn.nukkit.level.biome.Biome;
 import cn.nukkit.level.generator.object.tree.ObjectTree;
 import cn.nukkit.math.NukkitRandom;
 import cn.nukkit.math.Vector3;
@@ -572,7 +573,7 @@ public final class SchematicHandler {
             schemaConfiguration.put(id, new HashMap<>());
         }
         schemaConfiguration.get(id).clear();
-        schemaConfiguration.get(id).put(Configuration.BIOME, Biome.getBiome(Biome.PLAINS));
+        schemaConfiguration.get(id).put(Configuration.BIOME, EnumBiome.getBiome(1));
         schemaConfiguration.get(id).put(Configuration.DEFAULT, false);
         schemaConfiguration.get(id).put(Configuration.BLOCK_SPAWN, null);
         schemaConfiguration.get(id).put(Configuration.DESCRIPTION, "Best cozy world");
@@ -644,7 +645,7 @@ public final class SchematicHandler {
         this.setIslandValue(id, Configuration.PERMISSION, permission);
         this.setIslandValue(id, Configuration.USE_CONFIG_CHEST, useConfigChest);
         this.setIslandValue(id, Configuration.RATING, rating);
-        this.setIslandValue(id, Configuration.BIOME, Biome.getBiome(biome));
+        this.setIslandValue(id, Configuration.BIOME, EnumBiome.getBiome(biome));
         this.setIslandValue(id, Configuration.PASTE_ENTITIES, usePasteEntity);
     }
 

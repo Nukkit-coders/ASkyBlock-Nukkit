@@ -18,7 +18,8 @@ package com.larryTheCoder.utils;
 
 import cn.nukkit.Server;
 import cn.nukkit.item.Item;
-import cn.nukkit.level.generator.biome.Biome;
+import cn.nukkit.level.biome.Biome;
+import cn.nukkit.level.biome.EnumBiome;
 import cn.nukkit.plugin.Plugin;
 import cn.nukkit.utils.Config;
 import cn.nukkit.utils.ConfigSection;
@@ -169,10 +170,10 @@ public class ConfigManager {
         String defaultBiome = cfg.getString("biomesettings.defaultbiome", "PLAINS");
         try {
             // re-check if the biome exsits
-            Settings.defaultBiome = Biome.getBiome(defaultBiome);
+            Settings.defaultBiome = EnumBiome.getBiome(defaultBiome);
         } catch (Exception e) {
             Utils.send("Could not parse biome " + defaultBiome + " using PLAINS instead.");
-            Settings.defaultBiome = Biome.getBiome(Biome.PLAINS);
+            Settings.defaultBiome = EnumBiome.getBiome(1);
         }
 
         // System utils eg., Default world protection, cancel teleport distance

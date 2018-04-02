@@ -29,7 +29,40 @@ import cn.nukkit.form.response.FormResponseSimple;
 import cn.nukkit.form.window.FormWindowCustom;
 import cn.nukkit.form.window.FormWindowModal;
 import cn.nukkit.form.window.FormWindowSimple;
-import cn.nukkit.level.generator.biome.Biome;
+import cn.nukkit.level.biome.Biome;
+import cn.nukkit.level.biome.EnumBiome;
+import cn.nukkit.level.biome.impl.HellBiome;
+import cn.nukkit.level.biome.impl.beach.BeachBiome;
+import cn.nukkit.level.biome.impl.beach.ColdBeachBiome;
+import cn.nukkit.level.biome.impl.desert.DesertBiome;
+import cn.nukkit.level.biome.impl.desert.DesertHillsBiome;
+import cn.nukkit.level.biome.impl.desert.DesertMBiome;
+import cn.nukkit.level.biome.impl.extremehills.*;
+import cn.nukkit.level.biome.impl.forest.FlowerForestBiome;
+import cn.nukkit.level.biome.impl.forest.ForestBiome;
+import cn.nukkit.level.biome.impl.forest.ForestHillsBiome;
+import cn.nukkit.level.biome.impl.iceplains.IcePlainsBiome;
+import cn.nukkit.level.biome.impl.iceplains.IcePlainsSpikesBiome;
+import cn.nukkit.level.biome.impl.jungle.*;
+import cn.nukkit.level.biome.impl.mesa.*;
+import cn.nukkit.level.biome.impl.mushroom.MushroomIslandBiome;
+import cn.nukkit.level.biome.impl.mushroom.MushroomIslandShoreBiome;
+import cn.nukkit.level.biome.impl.ocean.DeepOceanBiome;
+import cn.nukkit.level.biome.impl.ocean.FrozenOceanBiome;
+import cn.nukkit.level.biome.impl.ocean.OceanBiome;
+import cn.nukkit.level.biome.impl.plains.PlainsBiome;
+import cn.nukkit.level.biome.impl.plains.SunflowerPlainsBiome;
+import cn.nukkit.level.biome.impl.river.FrozenRiverBiome;
+import cn.nukkit.level.biome.impl.river.RiverBiome;
+import cn.nukkit.level.biome.impl.roofedforest.RoofedForestBiome;
+import cn.nukkit.level.biome.impl.roofedforest.RoofedForestMBiome;
+import cn.nukkit.level.biome.impl.savanna.SavannaBiome;
+import cn.nukkit.level.biome.impl.savanna.SavannaMBiome;
+import cn.nukkit.level.biome.impl.savanna.SavannaPlateauBiome;
+import cn.nukkit.level.biome.impl.savanna.SavannaPlateauMBiome;
+import cn.nukkit.level.biome.impl.swamp.SwampBiome;
+import cn.nukkit.level.biome.impl.swamp.SwamplandMBiome;
+import cn.nukkit.level.biome.impl.taiga.*;
 import com.larryTheCoder.ASkyBlock;
 import com.larryTheCoder.locales.ASlocales;
 import com.larryTheCoder.schematic.SchematicHandler;
@@ -44,7 +77,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static cn.nukkit.level.generator.biome.Biome.*;
+import static cn.nukkit.level.biome.EnumBiome.*;
 
 /**
  * Plugin Panel controller class
@@ -104,7 +137,7 @@ public class Panel implements Listener {
                 responseId++;
                 boolean locked = response.getToggleResponse(responseId++);
 
-                Biome biomeType = Biome.getBiome(response.getDropdownResponse(responseId++).getElementContent());
+                Biome biomeType = EnumBiome.getBiome(response.getDropdownResponse(responseId++).getElementContent());
 
                 plugin.getIsland().createIsland(p, id, worldName, islandName, locked, biomeType);
                 panelDataId.remove(formId);
@@ -168,7 +201,7 @@ public class Panel implements Listener {
 
                 boolean lock = settingResponse.getToggleResponse(idea++);
                 String nameIsland = settingResponse.getInputResponse(idea++);
-                Biome biome = Biome.getBiome(settingResponse.getDropdownResponse(idea++).getElementContent());
+                Biome biome = EnumBiome.getBiome(settingResponse.getDropdownResponse(idea++).getElementContent());
                 if (pd.isLocked() != lock) {
                     pd.setLocked(lock);
                 }
@@ -355,25 +388,25 @@ public class Panel implements Listener {
     private ArrayList<String> getBiomes() {
         ArrayList<String> mojangFace = new ArrayList<>();
 
-        mojangFace.add(Biome.getBiome(OCEAN).getName());
-        mojangFace.add(Biome.getBiome(PLAINS).getName());
-        mojangFace.add(Biome.getBiome(DESERT).getName());
-        mojangFace.add(Biome.getBiome(MOUNTAINS).getName());
-        mojangFace.add(Biome.getBiome(FOREST).getName());
-        mojangFace.add(Biome.getBiome(TAIGA).getName());
-        mojangFace.add(Biome.getBiome(SWAMP).getName());
-        mojangFace.add(Biome.getBiome(RIVER).getName());
-        mojangFace.add(Biome.getBiome(ICE_PLAINS).getName());
-        mojangFace.add(Biome.getBiome(SMALL_MOUNTAINS).getName());
-        mojangFace.add(Biome.getBiome(BIRCH_FOREST).getName());
+        mojangFace.add(EnumBiome.getBiome(0).getName());
+        mojangFace.add(EnumBiome.getBiome(1).getName());
+        mojangFace.add(EnumBiome.getBiome(2).getName());
+        mojangFace.add(EnumBiome.getBiome(3).getName());
+        mojangFace.add(EnumBiome.getBiome(4).getName());
+        mojangFace.add(EnumBiome.getBiome(5).getName());
+        mojangFace.add(EnumBiome.getBiome(6).getName());
+        mojangFace.add(EnumBiome.getBiome(7).getName());
+        mojangFace.add(EnumBiome.getBiome(12).getName());
+        mojangFace.add(EnumBiome.getBiome(20).getName());
+        mojangFace.add(EnumBiome.getBiome(27).getName());
 
-        mojangFace.add(Biome.getBiome(JUNGLE).getName());
-        mojangFace.add(Biome.getBiome(ROOFED_FOREST).getName());
-        mojangFace.add(Biome.getBiome(ROOFED_FOREST_M).getName());
-        mojangFace.add(Biome.getBiome(MUSHROOM_ISLAND).getName());
-        mojangFace.add(Biome.getBiome(SAVANNA).getName());
+        mojangFace.add(EnumBiome.getBiome(21).getName());
+        mojangFace.add(EnumBiome.getBiome(29).getName());
+        mojangFace.add(EnumBiome.getBiome(157).getName());
+        mojangFace.add(EnumBiome.getBiome(14).getName());
+        mojangFace.add(EnumBiome.getBiome(35).getName());
 
-        mojangFace.add(Biome.getBiome(BEACH).getName());
+        mojangFace.add(EnumBiome.getBiome(16).getName());
 
         return mojangFace;
     }

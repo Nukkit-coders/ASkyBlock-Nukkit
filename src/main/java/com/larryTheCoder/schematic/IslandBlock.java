@@ -25,8 +25,9 @@ import cn.nukkit.blockentity.BlockEntitySign;
 import cn.nukkit.item.Item;
 import cn.nukkit.level.Location;
 import cn.nukkit.level.Position;
+import cn.nukkit.level.biome.EnumBiome;
 import cn.nukkit.level.format.generic.BaseFullChunk;
-import cn.nukkit.level.generator.biome.Biome;
+import cn.nukkit.level.biome.Biome;
 import cn.nukkit.math.Vector3;
 import cn.nukkit.utils.MainLogger;
 import cn.nukkit.utils.TextFormat;
@@ -422,7 +423,7 @@ public class IslandBlock extends BlockMinecraftId {
         Location loc = new Location(x, y, z, 0, 0, blockLoc.getLevel()).add(blockLoc);
         loadChunkAt(loc);
         blockLoc.getLevel().setBlock(loc, Block.get(typeId, data), true, usePhysics);
-        blockLoc.getLevel().setBiomeId(loc.getFloorX(), loc.getFloorZ(), biome.getId());
+        blockLoc.getLevel().setBiomeId(loc.getFloorX(), loc.getFloorZ(), (byte) biome.getId());
 
         // BlockEntities
         if (signText != null) {
