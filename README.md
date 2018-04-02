@@ -39,7 +39,7 @@ Current features are:
 * More colorful (Nice and cozy)
 
 ## Servers
-* play.nycuro.us
+* play.nycuro.us:19132
 
 ## Installation
 This plugin version support Nukkit Server v1.0.8.
